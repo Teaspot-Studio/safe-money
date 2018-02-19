@@ -55,9 +55,6 @@ library
   if flag(serialise)
     build-depends: serialise (>=0.2)
     cpp-options: -DHAS_serialise
-  if (flag(store) && !impl(ghcjs))
-    build-depends: store (>=0.2)
-    cpp-options: -DHAS_store
   if flag(xmlbf)
     build-depends: xmlbf (>=0.2), text
     cpp-options: -DHAS_xmlbf
@@ -94,9 +91,6 @@ test-suite test
   if flag(serialise)
     build-depends: serialise
     cpp-options: -DHAS_serialise
-  if (flag(store) && !impl(ghcjs))
-    build-depends: store
-    cpp-options: -DHAS_store
   if flag(xmlbf)
     build-depends: xmlbf, text
     cpp-options: -DHAS_xmlbf
@@ -111,10 +105,6 @@ flag binary
   manual: True
 flag cereal
   description: Provide instances for @cereal@
-  default: True
-  manual: True
-flag store
-  description: Provide instances for @store@
   default: True
   manual: True
 flag deepseq
