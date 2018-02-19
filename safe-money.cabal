@@ -52,9 +52,6 @@ library
   if flag(hashable)
     build-depends: hashable (>=1.2)
     cpp-options: -DHAS_hashable
-  if flag(serialise)
-    build-depends: serialise (>=0.2)
-    cpp-options: -DHAS_serialise
   if flag(xmlbf)
     build-depends: xmlbf (>=0.2), text
     cpp-options: -DHAS_xmlbf
@@ -88,9 +85,6 @@ test-suite test
   if flag(hashable)
     build-depends: hashable
     cpp-options: -DHAS_hashable
-  if flag(serialise)
-    build-depends: serialise
-    cpp-options: -DHAS_serialise
   if flag(xmlbf)
     build-depends: xmlbf, text
     cpp-options: -DHAS_xmlbf
@@ -113,10 +107,6 @@ flag deepseq
   manual: True
 flag hashable
   description: Provide instances for @hashable@
-  default: True
-  manual: True
-flag serialise
-  description: Provide instances for @serialise@
   default: True
   manual: True
 flag xmlbf
